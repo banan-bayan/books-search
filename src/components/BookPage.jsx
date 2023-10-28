@@ -6,6 +6,7 @@ import { selectors } from "../slices/booksSlice";
 export const BookPage = () => {
   const { bookId } = useParams()
   const book = useSelector((state) => selectors.selectById(state, bookId));
+
   return (
     <div className="book-page">
       <div className="book-page__img">

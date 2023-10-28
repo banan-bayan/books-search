@@ -44,6 +44,7 @@ export const loadBooks = createAsyncThunk(
           },
         },
       );
+      console.log(response, 'RESPONSE')
       const totalItems = response.data.totalItems;
       const { data } = response;
       const { items } = data;

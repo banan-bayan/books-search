@@ -19,6 +19,7 @@ export const options = {
     ],
   },
 };
-export const booksPerPage = 30;
+export const loadMore = 'Load More';
+export const booksPerPage = 10;
 export const errorMsg = 'books not found';
 

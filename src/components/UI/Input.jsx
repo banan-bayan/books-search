@@ -1,40 +1,28 @@
-import React, { useState, useRef, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { loadBooks, setSearchValue } from "../../slices/booksSlice";
+import React, { useRef, useEffect } from "react";
+import { Button } from "./Button.jsx";
 
-export const Input = ({ children }) => {
-  const [inputValue, setInputValue] = useState('');
+export const Input = ({handleInput, handlerSubmit, inputValue, clickHandler, styleBtn}) => {
   const inputRef = useRef(null);
   useEffect(() => {
-    inputRef.current.focus();
-  }, []);
-
-
-  const dispatch = useDispatch();
-
-  const handleInput = (e) => {
-    e.preventDefault();
-    dispatch(setSearchValue(e.target.value));
-    setInputValue(e.target.value);
-  };
-  const handlerSubmit = (e) => {
-    e.preventDefault();
-    if (inputValue) {
-      dispatch(loadBooks(inputValue));
-    }
-  };
+    inputRef.current.focus(), []
+  });
 
   return (
-    <form className="input" onSubmit={handlerSubmit}>
+    <form className="form" onSubmit={handlerSubmit}>
       <input
         type="text"
-        className="input__input"
+        className="form__input"
         placeholder=""
+        ref={inputRef}
         value={inputValue}
         onChange={handleInput}
-        ref={inputRef}
       />
-      {children}
+      <Button
+        clickHandler={clickHandler}
+        style={styleBtn}
+      >
+      </Button>
     </form>
   );
 };
+

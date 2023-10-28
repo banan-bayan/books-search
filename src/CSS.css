@@ -38,7 +38,7 @@ body {
   margin-left: 5%;
 }
 
-.btn-search__svg-search {
+/* .btn-search__svg-search {
   position: relative;
   z-index: 1;
   left: -100%;
@@ -51,34 +51,44 @@ body {
   margin-right: 5px;
   z-index: 1;
   background-color: white;
-}
+} */
 
-.btn-search__svg-search:hover {
+/* .btn-search__svg-search:hover {
   background-color: rgba(140, 143, 148, 0.2);
   transition: all 0.1s 0s ease;
 }
 
 .btn-search__svg-search:active {
   background-color: rgba(7, 14, 27, 0.8);
-}
+} */
 
-.input {
+.form {
   display: flex;
   margin-left: calc(100vw / 10);
   max-height: 43px;
 }
 
-.input__input {
+.form__input {
   width: 70vw;
   font-size: calc(100vw / 20);
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   border: 1px solid grey;
+  border-right: none;
   color: grey;
   box-shadow: 2px 3px 13px 0px rgba(0, 0, 0, 0.33);
   outline: none !important;
-  padding-bottom: 4px;
+  padding: 4px;
 }
-
+.btn-search {
+  border: 1px solid grey;
+  width: 10%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.btn-search:hover {
+  background-color: red;
+}
 .select {
   display: flex;
   width: 70vw;
@@ -283,13 +293,10 @@ body {
   font-size: calc(100vw / 50);
 }
 
-.btn-load-more {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
 
-.btn-load-more__btn {
+.btn-load-more {
+  /* margin-left: auto;
+  margin-right: auto; */
   width: 100px;
   height: 25px;
   font-size: 11px;
@@ -306,7 +313,7 @@ body {
   outline: none;
 }
 
-.btn-load-more__btn:hover {
+.btn-load-more:hover {
   background-color: #4e00c2;
   box-shadow: 0px 15px 20px rgba(60, 103, 227, 0.4);
   transform: translateY(-3px);
@@ -463,20 +470,9 @@ body {
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
   
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .header__container-options {
-    width: 90%;
-    margin-right: 14%;
-  }
-
-  .btn-search__svg-search { 
+  /* .btn-search__svg-search { 
     padding: 5px;
-  }
+  } */
 
   .select {
     max-height: 50px;
@@ -529,11 +525,17 @@ body {
     width: 65%;
   }
 
-   .input {
+   .form {
     padding: 5px;
   }
 
-   .input__input {
+  .input-container {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
+  }
+
+   .form__input {
     width: 50vw;
     font-size: calc(100vw / 60);
   }
